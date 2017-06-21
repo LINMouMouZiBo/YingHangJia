@@ -112,6 +112,36 @@ public class NewsDetailActivity extends AppCompatActivity {
 
     }
 
+     public class MyAsyncTask extends AsyncTask<Integer, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected String doInBackground(Integer... arg0) {
+            return query(arg0[0]);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            if (!StringUtils.isBlank(result) && result.equals("OK")) {
+                String msg = flag ? "已收藏" : "取消收藏";
+                Toast.makeText(getApplicationContext(),
+                        msg, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(),
+                        "网络异常", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    
+    
     
     
     
