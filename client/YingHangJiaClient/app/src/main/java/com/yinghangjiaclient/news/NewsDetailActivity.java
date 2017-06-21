@@ -202,7 +202,12 @@ public class NewsDetailActivity extends AppCompatActivity {
     
     
     
-    
+    private String getUserId() {
+        SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
+        String userid = sp.getString("USERID", "");
+        if (!sp.getBoolean("loginState", false)) return "";
+        return userid;
+    }
     
 
 }
