@@ -34,6 +34,7 @@ public class NewsMainActivity extends AppCompatActivity {
     private String[] newsIds;
     private ListView newsList;
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
@@ -61,6 +62,8 @@ public class NewsMainActivity extends AppCompatActivity {
 
     }
 
+    
+    
     /**
      * 定义一个类，让其继承AsyncTask这个类,实现异步 Params: String类型，表示传递给异步任务的参数类型是String，通常指定的是URL路径,这里用void
      * Progress: Integer类型，进度条的单位通常都是Integer类型 Result：boolean，是否登陆成功
@@ -123,6 +126,8 @@ public class NewsMainActivity extends AppCompatActivity {
         }
     }
 
+    
+    
     /**
      * @return return format: date|imageUrl;title;time|imageUrl;title;time|...
      */
@@ -161,5 +166,7 @@ public class NewsMainActivity extends AppCompatActivity {
         }
         return list;
     }
+    
+    
 }
 
