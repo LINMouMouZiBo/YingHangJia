@@ -184,6 +184,23 @@ public class NewsDetailActivity extends AppCompatActivity {
         }
     }
     
+    private String query(Integer action) {
+        String url;
+        url = HttpUtil.BASE_URL + "api/star/" + getUserId() + "?type=news&&starId=" + newsId;
+        if (action == 1)
+            return HttpUtil.queryStringForDelete(url);
+        url = HttpUtil.BASE_URL + "api/star/" + getUserId();
+        NameValuePair paraType = new BasicNameValuePair("type",
+                "news");
+        NameValuePair paraNewsId = new BasicNameValuePair("starId",
+                newsId);
+        List<NameValuePair> para = new ArrayList<NameValuePair>();
+        para.add(paraType);
+        para.add(paraNewsId);
+        return HttpUtil.queryStringForPut(url, para);
+    }
+    
+    
     
     
     
