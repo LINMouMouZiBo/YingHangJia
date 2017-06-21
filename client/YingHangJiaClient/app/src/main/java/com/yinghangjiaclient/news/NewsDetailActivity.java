@@ -141,7 +141,48 @@ public class NewsDetailActivity extends AppCompatActivity {
         }
     }
     
-    
+    public class MyAsyncTask1 extends AsyncTask<Void, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected String doInBackground(Void... arg0) {
+            String url = HttpUtil.BASE_URL + "api/star/" + getUserId() + "?type=news";
+            return HttpUtil.queryStringForGet(url);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            if (!StringUtils.isBlank(result)) {
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    JSONArray jsonArray = new JSONArray();
+                    jsonArray = JSONUtils.getJSONArray(jsonObject, "data", jsonArray);
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject temp = jsonArray.optJSONObject(i);
+                        if (temp != null) {
+                            String id = temp.getString("_id");
+                            if (id.equals(newsId)) {
+                                isTheFirstTime = true;
+                                collectBtn.setChecked(true);
+                            }
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Logger.e(e.getMessage());
+                }
+            }
+        }
+    }
     
     
     
