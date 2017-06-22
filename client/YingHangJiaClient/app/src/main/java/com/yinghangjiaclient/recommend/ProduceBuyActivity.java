@@ -74,7 +74,6 @@ public class ProduceBuyActivity extends AppCompatActivity {
         }
     }
 
-    
 
     private void openTencentMap() {
         try {
@@ -124,6 +123,11 @@ public class ProduceBuyActivity extends AppCompatActivity {
 
     private boolean isInstallByread(String packageName) {
         return new File("/data/data/" + packageName).exists();
+    }
+
+    private void giveMsg() {
+        Toast.makeText(getApplicationContext(),
+                "购买系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
     }
 
 }
