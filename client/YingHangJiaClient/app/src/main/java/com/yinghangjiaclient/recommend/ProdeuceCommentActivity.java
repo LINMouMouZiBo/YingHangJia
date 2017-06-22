@@ -123,22 +123,6 @@ public class ProdeuceCommentActivity extends AppCompatActivity {
             });
             mRecyclerView.setRefreshing(true);
 
-//            mLRecyclerViewAdapter.setOnItemClickListener(new OnItemClickListener() {
-//                @Override
-//                public void onItemClick(View view, int position) {
-//                    ItemModel item = mDataAdapter.getDataList().get(position);
-//                    Intent intent = new Intent();
-//                    intent.putExtra("url", item.bank);
-//                    intent.putExtra("_id", item.id);
-//                    intent.setClass(ProdeuceCommentActivity.this, NewsDetailActivity.class);
-//                    startActivity(intent);
-//                }
-//
-//                @Override
-//                public void onItemLongClick(View view, int position) {
-//                }
-//            });
-
             //            发表评论
             comment_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -201,23 +185,18 @@ public class ProdeuceCommentActivity extends AppCompatActivity {
             viewHolder.content.setText(item.bank);
             viewHolder.time.setText(item.cycle);
             viewHolder.username.setText(item.name);
-            // 异步加载图片
-//            if (!StringUtils.isBlank(item.imgRes))
-//                Ion.with(viewHolder.img).load((String) item.imgRes);
         }
 
         private class ViewHolder extends RecyclerView.ViewHolder {
             private TextView content;
             private TextView time;
             private TextView username;
-//            private ImageView img;
 
             public ViewHolder(View itemView) {
                 super(itemView);
                 username = (TextView) itemView.findViewById(R.id.textView30);
                 content = (TextView) itemView.findViewById(R.id.textView31);
                 time = (TextView) itemView.findViewById(R.id.textView33);
-//                img = (ImageView) itemView.findViewById(R.id.imageView23);
             }
         }
     }
