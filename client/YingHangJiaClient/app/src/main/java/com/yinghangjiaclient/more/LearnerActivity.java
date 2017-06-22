@@ -54,6 +54,12 @@ public class LearnerActivity extends AppCompatActivity {
     }
 
 
-    
+    @Override
+    public void onPause() {
+        super.onPause();
+        myweb.onPause();
+    }
+
+   
 }
 
