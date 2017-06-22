@@ -58,5 +58,36 @@ public class FeelbackActivity extends AppCompatActivity {
         }
     }
 
-   
+   public class MyAsyncTask extends AsyncTask<Void, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected String doInBackground(Void... arg0) {
+            return query();
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            if (!StringUtils.isBlank(result) && result.equals("OK")) {
+
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "反馈成功", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            } else {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "网络异常", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        }
+    }
 }
