@@ -60,6 +60,10 @@ public class LearnerActivity extends AppCompatActivity {
         myweb.onPause();
     }
 
-   
+    @Override
+    public void onResume() {
+        super.onResume();
+        myweb.onResume();
+    }
 }
 
