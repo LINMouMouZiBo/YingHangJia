@@ -118,6 +118,20 @@ public class MoreMainActivity extends AppCompatActivity {
         }
     }
 
-  
-    
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == CODE_FOR_WRITE_PERMISSION) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission Granted
+                share();
+            } else {
+                Toast.makeText(getApplicationContext(),
+                        "未获取权限，无法分享", Toast.LENGTH_SHORT).show();
+                // Permission Denied
+            }
+        }
+    }
+
+   
 }
