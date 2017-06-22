@@ -133,5 +133,23 @@ public class MoreMainActivity extends AppCompatActivity {
         }
     }
 
-   
+    private void share() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        try {
+            Resources r = getResources();
+            Bitmap bitmap = BitmapFactory.decodeResource(r, R.drawable.download);
+            Uri uriToImage = Uri.parse(MediaStore.Images.Media.insertImage(
+                    getContentResolver(), bitmap, null, null));
+            intent.putExtra(Intent.EXTRA_STREAM, uriToImage);
+            intent.setType("image/*");
+
+            intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
+            intent.putExtra(Intent.EXTRA_TEXT, "欢迎下载APP赢行家 The Banker 您的专属理财管家！！！");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(Intent.createChooser(intent, "分享到"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+    }
 }
