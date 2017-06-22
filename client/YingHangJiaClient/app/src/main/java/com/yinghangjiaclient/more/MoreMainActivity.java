@@ -132,6 +132,7 @@ public class MoreMainActivity extends AppCompatActivity {
             }
         }
     }
+    
 
     private void share() {
         Intent intent = new Intent(Intent.ACTION_SEND);
