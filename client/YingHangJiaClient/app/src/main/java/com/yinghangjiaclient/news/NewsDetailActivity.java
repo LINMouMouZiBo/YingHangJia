@@ -112,7 +112,7 @@ public class NewsDetailActivity extends AppCompatActivity {
 
     }
 
-     public class MyAsyncTask extends AsyncTask<Integer, Integer, String> {
+    public class MyAsyncTask extends AsyncTask<Integer, Integer, String> {
         @Override
         protected void onPreExecute() {
         }
@@ -140,7 +140,7 @@ public class NewsDetailActivity extends AppCompatActivity {
             }
         }
     }
-    
+
     public class MyAsyncTask1 extends AsyncTask<Void, Integer, String> {
         @Override
         protected void onPreExecute() {
@@ -183,7 +183,7 @@ public class NewsDetailActivity extends AppCompatActivity {
             }
         }
     }
-    
+
     private String query(Integer action) {
         String url;
         url = HttpUtil.BASE_URL + "api/star/" + getUserId() + "?type=news&&starId=" + newsId;
@@ -199,15 +199,12 @@ public class NewsDetailActivity extends AppCompatActivity {
         para.add(paraNewsId);
         return HttpUtil.queryStringForPut(url, para);
     }
-    
-    
-    
+
     private String getUserId() {
         SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
         String userid = sp.getString("USERID", "");
         if (!sp.getBoolean("loginState", false)) return "";
         return userid;
     }
-    
 
 }
