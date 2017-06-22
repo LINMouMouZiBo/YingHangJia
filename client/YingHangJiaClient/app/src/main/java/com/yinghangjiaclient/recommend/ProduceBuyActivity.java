@@ -74,10 +74,7 @@ public class ProduceBuyActivity extends AppCompatActivity {
         }
     }
 
-    private void giveMsg() {
-        Toast.makeText(getApplicationContext(),
-                "购买系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
-    }
+    
 
     private void openTencentMap() {
         try {
