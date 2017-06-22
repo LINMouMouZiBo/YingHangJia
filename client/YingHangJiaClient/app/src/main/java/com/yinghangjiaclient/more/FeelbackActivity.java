@@ -90,4 +90,17 @@ public class FeelbackActivity extends AppCompatActivity {
             }
         }
     }
+    private String query() {
+        String url;
+        url = HttpUtil.BASE_URL + "api/feedback";
+        SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
+        String username = sp.getString("USERNAME", "");
+        NameValuePair paraType = new BasicNameValuePair("username",
+                username);
+        NameValuePair paraNewsId = new BasicNameValuePair("text", feelbackContext.getText().toString());
+        List<NameValuePair> para = new ArrayList<NameValuePair>();
+        para.add(paraType);
+        para.add(paraNewsId);
+        return HttpUtil.queryStringForPut(url, para);
+    }
 }
