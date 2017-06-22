@@ -423,7 +423,6 @@ public class ProduceChooseActivity extends Activity {
             if (!StringUtils.isBlank(item.imgRes))
                 // 异步加载图片
                 mImageLoader.displayImage(StringUtils.bankLogoImageUrl(item.imgRes), viewHolder.banker_logo, options);
-            // Ion.with(viewHolder.banker_logo).load(item.imgRes);
         }
 
         private class ViewHolder extends RecyclerView.ViewHolder {
