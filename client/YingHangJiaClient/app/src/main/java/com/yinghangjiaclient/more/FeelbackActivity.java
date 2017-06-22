@@ -58,7 +58,7 @@ public class FeelbackActivity extends AppCompatActivity {
         }
     }
 
-   public class MyAsyncTask extends AsyncTask<Void, Integer, String> {
+    public class MyAsyncTask extends AsyncTask<Void, Integer, String> {
         @Override
         protected void onPreExecute() {
         }
@@ -90,6 +90,7 @@ public class FeelbackActivity extends AppCompatActivity {
             }
         }
     }
+
     private String query() {
         String url;
         url = HttpUtil.BASE_URL + "api/feedback";
