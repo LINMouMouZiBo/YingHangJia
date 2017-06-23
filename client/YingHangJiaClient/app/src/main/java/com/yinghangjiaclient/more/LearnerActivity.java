@@ -24,6 +24,7 @@ public class LearnerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
+        
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.new_user_guide);
