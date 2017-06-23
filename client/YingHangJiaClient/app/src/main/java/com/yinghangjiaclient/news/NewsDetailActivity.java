@@ -98,6 +98,7 @@ public class NewsDetailActivity extends AppCompatActivity {
                 }
             });
 
+            
             Button backBtn = (Button) findViewById(R.id.button3);
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
