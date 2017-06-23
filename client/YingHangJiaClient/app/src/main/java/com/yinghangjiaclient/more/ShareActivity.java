@@ -20,6 +20,7 @@ public class ShareActivity extends AppCompatActivity {
             setContentView(R.layout.activity_share);
 
             Button backBtn = (Button) findViewById(R.id.button3);
+            
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
