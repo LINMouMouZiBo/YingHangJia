@@ -30,6 +30,7 @@ public class MoreMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
+        
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.more_first);
