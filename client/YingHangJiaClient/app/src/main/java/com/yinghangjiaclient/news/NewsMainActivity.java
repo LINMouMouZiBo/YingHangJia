@@ -34,6 +34,7 @@ public class NewsMainActivity extends AppCompatActivity {
     private String[] newsIds;
     private ListView newsList;
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
@@ -123,6 +124,7 @@ public class NewsMainActivity extends AppCompatActivity {
         }
     }
 
+    
     /**
      * @return return format: date|imageUrl;title;time|imageUrl;title;time|...
      */
