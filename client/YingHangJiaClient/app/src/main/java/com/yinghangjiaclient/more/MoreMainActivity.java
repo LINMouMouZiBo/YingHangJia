@@ -110,6 +110,7 @@ public class MoreMainActivity extends AppCompatActivity {
     }
 
     private void requestContactPermission() {
+        
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             //申请 WRITE_CONTACTS 权限
