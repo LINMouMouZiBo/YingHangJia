@@ -34,7 +34,6 @@ public class NewsMainActivity extends AppCompatActivity {
     private String[] newsIds;
     private ListView newsList;
 
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
