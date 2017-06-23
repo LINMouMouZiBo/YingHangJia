@@ -102,6 +102,7 @@ public class FeelbackActivity extends AppCompatActivity {
         String username = sp.getString("USERNAME", "");
         NameValuePair paraType = new BasicNameValuePair("username",
                 username);
+        
         NameValuePair paraNewsId = new BasicNameValuePair("text", feelbackContext.getText().toString());
         List<NameValuePair> para = new ArrayList<NameValuePair>();
         para.add(paraType);
