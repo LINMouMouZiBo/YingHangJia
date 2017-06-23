@@ -28,6 +28,7 @@ public class FeelbackActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
+        
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.feedback_center);
