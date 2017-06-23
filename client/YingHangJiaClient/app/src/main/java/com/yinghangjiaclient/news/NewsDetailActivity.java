@@ -201,6 +201,7 @@ public class NewsDetailActivity extends AppCompatActivity {
         return HttpUtil.queryStringForPut(url, para);
     }
 
+    
     private String getUserId() {
         SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
         String userid = sp.getString("USERID", "");
