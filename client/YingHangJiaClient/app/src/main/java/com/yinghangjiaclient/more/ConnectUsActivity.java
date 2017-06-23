@@ -10,6 +10,7 @@ import com.yinghangjiaclient.R;
 
 public class ConnectUsActivity extends AppCompatActivity {
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
