@@ -50,6 +50,7 @@ public class NewsDetailActivity extends AppCompatActivity {
     private CheckBox collectBtn;
     private boolean isTheFirstTime = false;
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
