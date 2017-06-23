@@ -36,6 +36,7 @@ public class FeelbackActivity extends AppCompatActivity {
 
             // 登录按钮监听
             Button feedback_push_button = (Button) findViewById(R.id.feedback_push_button);
+            
             feedback_push_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
