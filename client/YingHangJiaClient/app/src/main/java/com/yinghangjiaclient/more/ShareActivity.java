@@ -15,6 +15,7 @@ public class ShareActivity extends AppCompatActivity {
         Logger.init("ying");
         
         try {
+            
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_share);
 
