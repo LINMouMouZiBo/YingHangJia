@@ -26,6 +26,7 @@ public class LearnerActivity extends AppCompatActivity {
         Logger.init("ying");
         
         try {
+            
             super.onCreate(savedInstanceState);
             setContentView(R.layout.new_user_guide);
 
