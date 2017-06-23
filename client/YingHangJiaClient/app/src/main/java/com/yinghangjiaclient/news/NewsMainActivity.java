@@ -123,7 +123,6 @@ public class NewsMainActivity extends AppCompatActivity {
         }
     }
 
-    
     /**
      * @return return format: date|imageUrl;title;time|imageUrl;title;time|...
      */
