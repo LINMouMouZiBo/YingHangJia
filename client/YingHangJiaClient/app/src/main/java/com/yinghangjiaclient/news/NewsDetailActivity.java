@@ -74,7 +74,6 @@ public class NewsDetailActivity extends AppCompatActivity {
             WebSettings settings = myweb.getSettings();
             settings.setJavaScriptEnabled(true);
 
-
             newsId = intent.getStringExtra("_id");
             collectBtn = (CheckBox) findViewById(R.id.button7);
             collectBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
