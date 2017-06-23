@@ -13,6 +13,7 @@ public class ShareActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
+        
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_share);
