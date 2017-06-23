@@ -32,6 +32,7 @@ public class MoreMainActivity extends AppCompatActivity {
         Logger.init("ying");
         
         try {
+            
             super.onCreate(savedInstanceState);
             setContentView(R.layout.more_first);
 
