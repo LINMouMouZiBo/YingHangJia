@@ -29,33 +29,33 @@ public class MainActivity extends TabActivity {
         TabHost.TabSpec spec;
         Intent intent;
 
-        //        ÏÂÃæ¼¸ĞĞ×ÃÇéÔö¼Ó»òĞŞ¸Ä£¬ĞŞ¸Ä¾Í¸ÄxxxxActivityÎªËùĞèÒ³Ãæ
+        //        ä¸‹é¢å‡ è¡Œé…Œæƒ…å¢åŠ æˆ–ä¿®æ”¹ï¼Œä¿®æ”¹å°±æ”¹xxxxActivityä¸ºæ‰€éœ€é¡µé¢
         intent = new Intent().setClass(this, UnLoginRecommendActivity.class);
-        spec = tabHost.newTabSpec("ÍÆ¼öunlogin").setIndicator("ÍÆ¼ö").setContent(intent);
+        spec = tabHost.newTabSpec("æ¨èunlogin").setIndicator("æ¨è").setContent(intent);
         tabHost.addTab(spec);
 
         intent = new Intent().setClass(this, RecommendMainActivity.class);
-        spec = tabHost.newTabSpec("ÍÆ¼ölogin").setIndicator("ÍÆ¼ö").setContent(intent);
+        spec = tabHost.newTabSpec("æ¨èlogin").setIndicator("æ¨è").setContent(intent);
         tabHost.addTab(spec);
 
         intent = new Intent().setClass(this, NewsMainActivity.class);
-        spec = tabHost.newTabSpec("×ÊÑ¶").setIndicator("ÍÆ¼ö").setContent(intent);
+        spec = tabHost.newTabSpec("èµ„è®¯").setIndicator("æ¨è").setContent(intent);
         tabHost.addTab(spec);
 
         intent = new Intent().setClass(this, PersonalMainActivity.class);
-        spec = tabHost.newTabSpec("ÎÒµÄ").setIndicator("ÍÆ¼ö").setContent(intent);
+        spec = tabHost.newTabSpec("æˆ‘çš„").setIndicator("æ¨è").setContent(intent);
         tabHost.addTab(spec);
 
         intent = new Intent().setClass(this, MoreMainActivity.class);
-        spec = tabHost.newTabSpec("¸ü¶à").setIndicator("ÍÆ¼ö").setContent(intent);
+        spec = tabHost.newTabSpec("æ›´å¤š").setIndicator("æ¨è").setContent(intent);
         tabHost.addTab(spec);
         if (loginJudge()) {
-            tabHost.setCurrentTabByTag("ÍÆ¼ölogin");
+            tabHost.setCurrentTabByTag("æ¨èlogin");
         } else {
-            tabHost.setCurrentTabByTag("ÍÆ¼öunlogin");
+            tabHost.setCurrentTabByTag("æ¨èunlogin");
         }
 
-        //        Õâ¸öIDÊÇradioGroupµÄID£¬¶ÔÓÚ²»Í¬µÄgroupÉèÖÃ²»Í¬Öµ£¬·ñÔò»á±ÀÀ£
+        //        è¿™ä¸ªIDæ˜¯radioGroupçš„IDï¼Œå¯¹äºä¸åŒçš„groupè®¾ç½®ä¸åŒå€¼ï¼Œå¦åˆ™ä¼šå´©æºƒ
         RadioGroup radioGroup = (RadioGroup) this
                 .findViewById(R.id.main_tab_group);
         radioGroup.setOnCheckedChangeListener(
@@ -64,23 +64,23 @@ public class MainActivity extends TabActivity {
                     public void onCheckedChanged(RadioGroup group,
                                                  int checkedId) {
                         switch (checkedId) {
-                            case R.id.main_tab_recomment:// ×ÊÑ¶
+                            case R.id.main_tab_recomment:// èµ„è®¯
                                 if (loginJudge()) {
-                                    tabHost.setCurrentTabByTag("ÍÆ¼ölogin");
+                                    tabHost.setCurrentTabByTag("æ¨èlogin");
                                 } else {
-                                    tabHost.setCurrentTabByTag("ÍÆ¼öunlogin");
+                                    tabHost.setCurrentTabByTag("æ¨èunlogin");
                                 }
                                 break;
-                            case R.id.main_tab_zixun:// ×ÊÑ¶
-                                tabHost.setCurrentTabByTag("×ÊÑ¶");
+                            case R.id.main_tab_zixun:// èµ„è®¯
+                                tabHost.setCurrentTabByTag("èµ„è®¯");
                                 break;
-                            case R.id.main_tab_me:// ÎÒµÄ
+                            case R.id.main_tab_me:// æˆ‘çš„
 //                                loginJudge();
-                                tabHost.setCurrentTabByTag("ÎÒµÄ");
+                                tabHost.setCurrentTabByTag("æˆ‘çš„");
                                 break;
-                            case R.id.main_tab_more:// ¸ü¶à
+                            case R.id.main_tab_more:// æ›´å¤š
 //                                loginJudge();
-                                tabHost.setCurrentTabByTag("¸ü¶à");
+                                tabHost.setCurrentTabByTag("æ›´å¤š");
                                 break;
                             default:
                                 break;
@@ -90,7 +90,7 @@ public class MainActivity extends TabActivity {
     }
 
     /**
-     * ÅĞ¶ÏÊÇ·ñµÇÂ¼£¬Î´µÇÂ¼ÔòÌø×ªµÇÂ¼½çÃæ
+     * åˆ¤æ–­æ˜¯å¦ç™»å½•ï¼Œæœªç™»å½•åˆ™è·³è½¬ç™»å½•ç•Œé¢
      */
     private boolean loginJudge() {
        return sp.getBoolean("loginState", false);

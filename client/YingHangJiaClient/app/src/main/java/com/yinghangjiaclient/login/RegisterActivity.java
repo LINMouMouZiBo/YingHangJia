@@ -7,11 +7,27 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 
-import com.yinghangjiaclient.yinghangjiaclient.R;
+import com.orhanobut.logger.Logger;
+import com.yinghangjiaclient.R;
+import com.yinghangjiaclient.util.HttpUtil;
 
-public class RegisterActivity extends AppCompatActivity {
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class RegisterActivity extends Activity {
+    private EditText usrEditTest, pwdEditTest, pwdAgainEditTest;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
