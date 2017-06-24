@@ -6,6 +6,32 @@
     android:background="#eeeeee"
     android:orientation="vertical">
     <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/returnback_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/button3"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="个人中心"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
         app:layout_marginTopPercent="7.73%"
         android:layout_height="0dp"
         app:layout_heightPercent = "84.1%"
