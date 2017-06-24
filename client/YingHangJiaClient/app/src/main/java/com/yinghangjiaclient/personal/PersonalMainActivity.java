@@ -27,17 +27,17 @@ public class PersonalMainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.textView8);
         textView.setText("用户名: " + sp.getString("USERNAME", ""));
 
-        // 跳转到个人中心
-        Button personal_center_btn = (Button) findViewById(R.id.personal_center_btn);
-        personal_center_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent();
-                intent1.setClass(PersonalMainActivity.this,
-                        PersonalCenterActivity.class);
-                startActivity(intent1);
-            }
-        });
+            // 跳转到个人中心
+            Button personal_center_btn = (Button) findViewById(R.id.personal_center_btn);
+            personal_center_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            PersonalCenterActivity.class);
+                    startActivity(intent1);
+                }
+            });
 
         Button personal_image_btn = (Button) findViewById(R.id.button6);
         personal_image_btn.setOnClickListener(new View.OnClickListener() {
@@ -50,30 +50,44 @@ public class PersonalMainActivity extends AppCompatActivity {
             }
         });
 
-        Button personal_image_btn = (Button) findViewById(R.id.button6);
-        personal_image_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent();
-                intent1.setClass(PersonalMainActivity.this,
-                        PersonalCenterActivity.class);
-                startActivity(intent1);
-            }
-        });
+            TextView name = (TextView) findViewById(R.id.textView8);
+            name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            PersonalCenterActivity.class);
+                    startActivity(intent1);
+                }
+            });
 
-        TextView name = (TextView) findViewById(R.id.textView8);
-        name.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent();
-                intent1.setClass(PersonalMainActivity.this,
-                        PersonalCenterActivity.class);
-                startActivity(intent1);
-            }
-        });
-            // 跳转到个人信息
-            Button persenal_info_change_button = (Button) findViewById(R.id.persenal_info_change_button);
-            persenal_info_change_button.setOnClickListener(new View.OnClickListener() {
+            // 跳转到已购买
+            Button bought_btn = (Button) findViewById(R.id.bought_btn);
+            bought_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            BoughtActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
+            // 跳转到已收藏
+            Button collect_btn = (Button) findViewById(R.id.collect_btn);
+            collect_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            CollectActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
+            // 跳转到资讯收藏
+            Button news_collect_btn = (Button) findViewById(R.id.news_collect_btn);
+            news_collect_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent1 = new Intent();

@@ -38,23 +38,6 @@ public class PasswordEditActivity extends AppCompatActivity {
             setContentView(R.layout.change_password_content);
             sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
 
-            usrEditTest = (EditText) findViewById(R.id.userName);
-            pwdEditTest = (EditText) findViewById(R.id.user_Password);
-            pwdAgainEditTest =
-                    (EditText) findViewById(R.id.user_Password_confime);
-
-            usrEditTest.setText(sp.getString("USERNAME", ""));
-
-            Button regBtn = (Button) findViewById(R.id.button14);
-            //为注册按钮添加事件
-            regBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (validate()) {
-                        new MyAsyncTask().execute();
-                    }
-                }
-            });
 
             CheckBox password_delete_all = (CheckBox) findViewById(R.id.password_delete_all);
             password_delete_all.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
