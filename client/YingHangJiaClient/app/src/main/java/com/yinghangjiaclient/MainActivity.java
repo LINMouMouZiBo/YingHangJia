@@ -1,11 +1,23 @@
 package com.yinghangjiaclient;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.app.TabActivity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.RadioGroup;
+import android.widget.TabHost;
 
-import com.yinghangjiaclient.yinghangjiaclient.R;
+import com.yinghangjiaclient.more.MoreMainActivity;
+import com.yinghangjiaclient.news.NewsMainActivity;
+import com.yinghangjiaclient.personal.PersonalMainActivity;
+import com.yinghangjiaclient.recommend.RecommendMainActivity;
+import com.yinghangjiaclient.recommend.UnLoginRecommendActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends TabActivity {
+    private static TabHost tabHost;
+
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,5 +87,12 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    /**
+     * ÅÐ¶ÏÊÇ·ñµÇÂ¼£¬Î´µÇÂ¼ÔòÌø×ªµÇÂ¼½çÃæ
+     */
+    private boolean loginJudge() {
+       return sp.getBoolean("loginState", false);
     }
 }
