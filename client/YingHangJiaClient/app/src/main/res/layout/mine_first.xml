@@ -127,64 +127,11 @@
                     android:layout_centerHorizontal="true"
                     android:layout_width="2dp"
                     android:layout_height="match_parent" />
-                <android.support.percent.PercentRelativeLayout
-                    android:layout_width="0dp"
-                    app:layout_marginLeftPercent="52%"
-                    android:layout_height="match_parent"
-                    app:layout_widthPercent="49%"
-                    >
-                    <RelativeLayout
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_width="160dp"
-                        android:layout_height="35dp">
-
-                        <TextView
-                            android:textSize="17dp"
-                            android:textColor="#ffffff"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="预期资产"
-                            android:id="@+id/textView54"
-                            android:layout_alignParentLeft="true" />
-
-
-                        <RelativeLayout
-                            android:background="@drawable/yugushouyi_background"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:layout_width="87dp"
-                            android:layout_height="30dp"
-                            android:layout_alignParentRight="true"
-                            >
-
-                            <TextView
-                                android:textSize="15dp"
-                                android:textColor="#ffde2b"
-                                android:gravity="center"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="10000RMB"
-                                android:id="@+id/textView7" />
-                        </RelativeLayout>
-                    </RelativeLayout>
-                </android.support.percent.PercentRelativeLayout>
 
             </android.support.percent.PercentRelativeLayout>
 
             </android.support.percent.PercentRelativeLayout>
 
-
-    <android.support.percent.PercentRelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_marginTopPercent="57.25%"
-            app:layout_heightPercent="2.62%"
-            android:background="#eeeeee"
-            >
-        </android.support.percent.PercentRelativeLayout>
 
     <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"
