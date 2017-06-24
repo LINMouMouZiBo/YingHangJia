@@ -235,19 +235,6 @@ public class LoginActivity extends Activity {
         alert.show();
     }
 
-    //通过用户名与密码进行查询，发送post请求，得到响应
-    private String query(String username, String password) {
-        String url;
-        url = HttpUtil.BASE_URL + "api/signin";
-        NameValuePair paraUsername = new BasicNameValuePair("name",
-                username);
-        NameValuePair paraPassword = new BasicNameValuePair("password",
-                password);
-        List<NameValuePair> para = new ArrayList<NameValuePair>();
-        para.add(paraPassword);
-        para.add(paraUsername);
-        return HttpUtil.queryStringForPost(url, para);
-    }
 
     //定义login 方法
     private String login() {
@@ -261,24 +248,6 @@ public class LoginActivity extends Activity {
         }
     }
 
-    private String getUserId(String name) {
-        String useId = "";
-        try {
-            String url = HttpUtil.BASE_URL + "api/user/" + name;
-            String result = HttpUtil.queryStringForGet(url);
-            JSONObject jsonObject = new JSONObject(result);
-            JSONObject data = jsonObject.getJSONObject("data");
-            useId = data.getString("_id");
-            score = data.getInt("score");
-            scoreAge = data.getInt("scoreAge");
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Logger.e(e.getMessage());
-        } catch (Exception e) {
-            e.printStackTrace();
-            Logger.e(e.getMessage());
-        }
-        return useId;
-    }
+
 }
 
