@@ -14,6 +14,14 @@ async function getUser(id) {
 async function createUser(user, requiredAttr) {
   const user_ = _.pick(user, requiredAttr);
 
+  const existUser = await db.user.findOne({
+    name: user_.name,
+  });
+
+  if (existUser) {
+    return Promise.reject("账号已存在");
+  }
+
   const salt = bcrypt.genSaltSync(10);
   user_.password = bcrypt.hashSync(user.password, salt);
 
