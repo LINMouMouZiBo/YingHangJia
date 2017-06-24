@@ -28,9 +28,9 @@ public class AdvisorActivity extends AppCompatActivity {
             intent.putExtra(Constant.EXTRA_SHOW_USERNICK, true);
             intent.putExtra("chatType", EMMessage.ChatType.Chat);
 
-            // 这里直接使用EaseUI封装好的聊天界面
+            // 杩欓噷鐩存帴浣跨敤EaseUI灏佽濂界殑鑱婂ぉ鐣岄潰
             chatFragment = new EaseChatFragment();
-            // 将参数传递给聊天界面
+            // 灏嗗弬鏁颁紶閫掔粰鑱婂ぉ鐣岄潰
             chatFragment.setArguments(intent.getExtras());
             getSupportFragmentManager().beginTransaction().add(R.id.ec_layout_container, chatFragment).commit();
         } catch (Exception e) {
