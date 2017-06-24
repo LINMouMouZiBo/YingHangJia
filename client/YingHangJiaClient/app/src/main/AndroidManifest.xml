@@ -11,7 +11,11 @@
         android:screenOrientation="portrait"
         android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <!-- 解决TabHost随着输入法软键盘出现而上浮的问题 http://blog.sina.com.cn/s/blog_6dc41baf01015wqy.html -->
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,7 +46,22 @@
             android:screenOrientation="portrait" />
         <activity android:name=".more.MoreMainActivity"
             android:screenOrientation="portrait" />
-
+        <activity android:name=".more.FeelbackActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".more.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".more.ConnectUsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".more.ShareActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".more.LearnerActivity"
+            android:hardwareAccelerated="true" />
+        <activity android:name=".personal.ScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".personal.AdvisorActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".login.QuestionnaireConfirmActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".login.QuestionPersonalActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".personal.TestResultActivity"
