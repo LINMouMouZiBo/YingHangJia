@@ -17,6 +17,7 @@ import com.yinghangjiaclient.login.LoginActivity;
 
 public class PersonalMainActivity extends AppCompatActivity {
     private SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
