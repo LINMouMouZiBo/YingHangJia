@@ -50,7 +50,6 @@ public class NewsDetailActivity extends AppCompatActivity {
     private CheckBox collectBtn;
     private boolean isTheFirstTime = false;
 
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
@@ -73,6 +72,7 @@ public class NewsDetailActivity extends AppCompatActivity {
             });
             WebSettings settings = myweb.getSettings();
             settings.setJavaScriptEnabled(true);
+
 
             newsId = intent.getStringExtra("_id");
             collectBtn = (CheckBox) findViewById(R.id.button7);
@@ -98,7 +98,6 @@ public class NewsDetailActivity extends AppCompatActivity {
                 }
             });
 
-            
             Button backBtn = (Button) findViewById(R.id.button3);
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -201,7 +200,6 @@ public class NewsDetailActivity extends AppCompatActivity {
         return HttpUtil.queryStringForPut(url, para);
     }
 
-    
     private String getUserId() {
         SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
         String userid = sp.getString("USERID", "");

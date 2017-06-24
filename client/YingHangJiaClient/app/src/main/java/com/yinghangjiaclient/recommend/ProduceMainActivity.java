@@ -36,6 +36,7 @@ public class ProduceMainActivity extends TabActivity {
             tabHost = this.getTabHost();
             TabHost.TabSpec spec;
 
+            //        下面几行酌情增加或修改，修改就改xxxxActivity为所需页面
             intent = new Intent().setClass(this, ProduceInfoActivity.class);
             intent.putExtra("_id", financelId);
             spec = tabHost.newTabSpec("info").setIndicator("详情").setContent(intent);
