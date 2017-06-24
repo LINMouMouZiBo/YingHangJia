@@ -91,8 +91,8 @@ public class PersonalMainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent1 = new Intent();
-                    intent1.setClass(PersonalCenterActivity.this,
-                            PersonalInfoActivity.class);
+                    intent1.setClass(PersonalMainActivity.this,
+                            NewsCollectActivity.class);
                     startActivity(intent1);
                 }
             });
@@ -109,8 +109,27 @@ public class PersonalMainActivity extends AppCompatActivity {
                 }
             });
 
-            Button backBtn = (Button) findViewById(R.id.button3);
-            backBtn.setOnClickListener(new View.OnClickListener() {
+            // 跳转到客服
+            Button advisor_btn = (Button) findViewById(R.id.coustomer_server_btn);
+            advisor_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Intent intent1 = new Intent();
+                        // EaseUI封装的聊天界面需要这两个参数，聊天者的username，以及聊天类型，单聊还是群聊
+                        intent1.setClass(PersonalMainActivity.this,
+                                EaseLoginActivity.class);
+                        startActivity(intent1);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Logger.e(e.getMessage());
+                    }
+                }
+            });
+
+            // 退出登录
+            Button button_btn = (Button) findViewById(R.id.button);
+            button_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     finish();
