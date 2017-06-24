@@ -5,9 +5,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
+import com.yinghangjiaclient.easeuiHelper.EaseLoginActivity;
+import com.yinghangjiaclient.login.LoginActivity;
 
 public class PersonalMainActivity extends AppCompatActivity {
     private SharedPreferences sp;
@@ -24,8 +30,8 @@ public class PersonalMainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
 
-        TextView textView = (TextView) findViewById(R.id.textView8);
-        textView.setText("用户名: " + sp.getString("USERNAME", ""));
+            TextView textView = (TextView) findViewById(R.id.textView8);
+            textView.setText("用户名: " + sp.getString("USERNAME", ""));
 
             // 跳转到个人中心
             Button personal_center_btn = (Button) findViewById(R.id.personal_center_btn);
@@ -39,16 +45,16 @@ public class PersonalMainActivity extends AppCompatActivity {
                 }
             });
 
-        Button personal_image_btn = (Button) findViewById(R.id.button6);
-        personal_image_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent();
-                intent1.setClass(PersonalMainActivity.this,
-                        PersonalCenterActivity.class);
-                startActivity(intent1);
-            }
-        });
+            Button personal_image_btn = (Button) findViewById(R.id.button6);
+            personal_image_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            PersonalCenterActivity.class);
+                    startActivity(intent1);
+                }
+            });
 
             TextView name = (TextView) findViewById(R.id.textView8);
             name.setOnClickListener(new View.OnClickListener() {
@@ -132,12 +138,37 @@ public class PersonalMainActivity extends AppCompatActivity {
             button_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putBoolean("loginState", false);
+                    editor.apply();
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            LoginActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
+            TextView profit = (TextView) findViewById(R.id.textView6);
+            profit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(PersonalMainActivity.this,
+                            "个人收益系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            TextView asset = (TextView) findViewById(R.id.textView7);
+            asset.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(PersonalMainActivity.this,
+                            "个人资产系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
                 }
             });
         } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
         }
+
     }
 }
