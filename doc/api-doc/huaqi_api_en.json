@@ -1,0 +1,643 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "server API",
+        "version": "alpha"
+    },
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/signup": {
+            "post": {
+                "summary": "regist",
+                "description": "regist by username and password\n",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "username",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "password",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "regist success"
+                    },
+                    "400": {
+                        "description": "parameters error"
+                    },
+                    "403": {
+                        "description": "fail to regist"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        },
+        "/api/signin": {
+            "post": {
+                "summary": "sign in",
+                "description": "sign in by username and password",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "username",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "password",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "400": {
+                        "description": "parameters error"
+                    },
+                    "404": {
+                        "description": "failure"
+                    }
+                }
+            }
+        },
+        "/api/user/{{userId}}": {
+            "get": {
+                "summary": "get user's record",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "user's ID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success, return user's record",
+                        "schema": {
+                            "$ref": "#/definitions/UserInfo"
+                        }
+                    },
+                    "404": {
+                        "description": "failure"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "modify user's record",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "user's ID",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "username",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "score",
+                        "in": "formData",
+                        "description": "score",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "scoreAge",
+                        "in": "formData",
+                        "description": "score related to age",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "age",
+                        "in": "formData",
+                        "description": "age",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "phone",
+                        "in": "formData",
+                        "description": "phone",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "gender",
+                        "in": "formData",
+                        "description": "gender",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "403": {
+                        "description": "failure"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        },
+        "/api/user/password/{{userId}}": {
+            "post": {
+                "summary": "modify password by user's ID",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "user's ID",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "403": {
+                        "description": "not modified"
+                    }
+                }
+            }
+        },
+        "/api/user/checkIn/{{userId}}": {
+            "post": {
+                "summary": "check in",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "user's ID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "403": {
+                        "description": "not modified"
+                    }
+                }
+            }
+        },
+        "/api/star/{{userId}}": {
+            "get": {
+                "summary": "get user's star by user's ID and star's type",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "user's ID",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "type：'prod' for product，'news' for news",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/News"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "failure"
+                    }
+                }
+            },
+            "put": {
+                "summary": "modify user's star",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "user's ID",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "formData",
+                        "description": "type 'prod' for product，'news' for news",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "starId",
+                        "in": "formData",
+                        "description": "star's ID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "403": {
+                        "description": "failure"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "delete star",
+                "description": "by id, type, starId",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "user' ID",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "type 'prod' for product，'news' for news",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "starId",
+                        "in": "query",
+                        "description": "star's ID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "403": {
+                        "description": "failure"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        },
+        "/api/product": {
+            "get": {
+                "summary": "conditional query of product",
+                "parameters": [
+                    {
+                        "name": "bank",
+                        "in": "query",
+                        "description": "bank name (seperate by comma)，such as 农业银行,兴业银行",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "product's name, such as 得利宝",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeLimit",
+                        "in": "query",
+                        "description": "Time limit of investment (seperate by semocolon)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "rate",
+                        "in": "query",
+                        "description": "Expect earning rate (seperate by semocolon)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "startAmount",
+                        "in": "query",
+                        "description": "Start amount of delegation (seperate by semocolon)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "_id of some item, return 10 records after this item. return first 10 return if not specific",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Product"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        },
+        "/api/product/{{productId}}": {
+            "get": {
+                "summary": "get product by id",
+                "parameters": [
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "description": "product's id",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    },
+                    "400": {
+                        "description": "parameters error"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        },
+        "/api/product/comment/{{productId}}": {
+            "put": {
+                "summary": "comment for some product",
+                "parameters": [
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "description": "product's ID",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "username",
+                        "in": "formData",
+                        "description": "username",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "text",
+                        "in": "formData",
+                        "description": "comment's content",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "400": {
+                        "description": "parameters error"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        },
+        "/api/product/recommend/{userId}": {
+            "get": {
+                "summary": "get recommend product of a user",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "user's ID",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success, return products",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Product"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "parameters error"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        },
+        "/api/news": {
+            "get": {
+                "summary": "get daily news",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/News"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        },
+        "/api/feedback": {
+            "put": {
+                "summary": "upload feedback",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "formData",
+                        "description": "username, not user's ID",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "text",
+                        "in": "formData",
+                        "description": "content",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "500": {
+                        "description": "interval server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "News": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "string"
+                },
+                "img": {
+                    "type": "string"
+                }
+            }
+        },
+        "UserInfo": {
+            "type": "object",
+            "properties": {
+                "score": {
+                    "type": "integer",
+                    "description": "分数"
+                },
+                "scoreAge": {
+                    "type": "integer",
+                    "description": "跟年龄相关的score"
+                },
+                "age": {
+                    "type": "integer",
+                    "description": "年龄"
+                },
+                "purchased": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Product"
+                    },
+                    "description": "已购买的产品"
+                },
+                "starProd": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "收藏产品的id列表"
+                },
+                "starNews": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "收藏的新闻的id列表"
+                }
+            }
+        },
+        "Comment": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "评论人的名字"
+                },
+                "text": {
+                    "type": "string",
+                    "description": "评论内容"
+                }
+            }
+        },
+        "Product": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "产品名"
+                },
+                "bankName": {
+                    "type": "string",
+                    "description": "发行银行名字"
+                }
+            }
+        }
+    }
+}
