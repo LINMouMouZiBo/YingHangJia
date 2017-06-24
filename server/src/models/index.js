@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 import bulk from 'bulk-require';
 import config from '../config';
 
-mongoose.connect(`mongodb://${config.db.host}/${config.db.database}`);
+const dbConfig = config.db;
+mongoose.connect(`${dbConfig.username}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`);
 
 const models = bulk(__dirname, ['./!(*index).js']); // 路由配置文件的集合, 忽略 index.js
 const db = {};
