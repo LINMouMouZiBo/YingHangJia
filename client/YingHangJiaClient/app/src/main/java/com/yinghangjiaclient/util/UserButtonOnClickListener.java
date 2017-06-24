@@ -1,4 +1,5 @@
 package com.yinghangjiaclient.util;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -36,4 +37,3 @@ public class UserButtonOnClickListener implements View.OnClickListener {
         currentActivity.startActivity(i);
     }
 }
-
