@@ -18,7 +18,9 @@
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.RegisterActivity" />
         <activity android:name=".personal.PersonalMainActivity" />
-        <activity android:name=".personal.PersonalCenterActivity"></activity>
+        <activity android:name=".personal.PersonalCenterActivity" />
+        <activity android:name=".personal.PersonalInfoActivity" />
+        <activity android:name=".personal.PasswordEditActivity"></activity>
     </application>
 
 </manifest>
