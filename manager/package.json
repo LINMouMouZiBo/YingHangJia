@@ -2,7 +2,7 @@
   "name": "manager",
   "version": "1.0.0",
   "description": "Feedback manager",
-  "author": "庄清惠 <zhuangqhc@163.com>",
+  "author": "林子博 <673418747@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
