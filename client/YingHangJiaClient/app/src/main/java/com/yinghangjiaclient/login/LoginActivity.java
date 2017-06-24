@@ -70,13 +70,6 @@ public class LoginActivity extends Activity {
                 editor.apply();
             }
 
-            //如果上次选了记住，那进入登录页面也自动勾选记住，并填上用户名和密码
-            if (choseRemember) {
-                userName.setText(name);
-                userPassword.setText(pass);
-                rememberMe.setChecked(true);
-            }
-
             // 登录按钮监听
             loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override

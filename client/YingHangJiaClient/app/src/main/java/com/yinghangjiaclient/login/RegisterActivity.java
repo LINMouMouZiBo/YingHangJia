@@ -1,6 +1,11 @@
 package com.yinghangjiaclient.login;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.yinghangjiaclient.yinghangjiaclient.R;
@@ -140,5 +145,48 @@ public class RegisterActivity extends AppCompatActivity {
                 showDialog("用户名已存在，请更换");
             }
         }
+    }
+
+    //对用户名密码进行非空验证
+    private boolean validate() {
+        String usrname = usrEditTest.getText().toString();
+        if (usrname.equals("")) {
+            showDialog("用户名必须填");
+            return false;
+        }
+        String pwd = pwdEditTest.getText().toString();
+        if (pwd.equals("")) {
+            showDialog("密码必须填");
+            return false;
+        }
+        String pwdAgain = pwdAgainEditTest.getText().toString();
+        if (!pwd.equals(pwdAgain)) {
+            showDialog("密码不匹配");
+            return false;
+        }
+        return true;
+    }
+
+    //显示提示信息的对话框
+    private void showDialog(String msg) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(msg)
+                .setCancelable(false)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+
+
+    //定义login 方法
+    private boolean login() {
+        String usrname = usrEditTest.getText().toString();
+        String pwd = pwdEditTest.getText().toString();
+        String result = query(usrname, pwd);
+        return result != null && result.equals("OK");
     }
 }
