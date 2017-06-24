@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#00000000"
+    >
+    <ImageView
+        android:background="#ffffff"
+        android:layout_margin="10dp"
+        android:minHeight="75dp"
+        android:minWidth="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/widget_image"
+        android:src="@drawable/widget_image"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/appwidget_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:contentDescription="haha"
+            android:text="金钥匙·如意组合2016年第213期看涨黄金人民币理财产品"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/appwidget_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:contentDescription="@string/appwidget_text"
+            android:text="4.5%"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/finical_id"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>
