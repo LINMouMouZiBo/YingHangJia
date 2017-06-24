@@ -1,0 +1,154 @@
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="#0667c8"
+        app:layout_heightPercent="7.73%">
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/button8"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/returnback_button" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="注册"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        app:layout_marginTopPercent="7.73%">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:text="问卷说明"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#000000" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <Button
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="215dp"
+                    android:background="@drawable/next_button_background"
+                    android:text="下一步"
+                    android:textColor="#ffffff"
+                    android:textSize="23dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_above="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true">
+
+                <CheckBox
+                    android:id="@+id/checkBox8"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="1.5dp"
+                    android:background="@drawable/shape_xiyi_background"
+                    android:button="@null"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toEndOf="@+id/checkBox8"
+                    android:layout_toRightOf="@+id/checkBox8"
+                    android:text="我同意"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView22"
+                    android:layout_below="@+id/textView22"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/xieyi"
+                    android:textColor="#0667c8"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView23"
+                    android:layout_alignStart="@+id/textView23"
+                    android:layout_below="@+id/textView23"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/safe_activity"
+                    android:textColor="#0667c8"
+                    android:textSize="10dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_above="@+id/relativeLayout5"
+                android:layout_below="@+id/textView21"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:lineSpacingMultiplier="1.3"
+                    android:text="尊敬的先生/女士 :\n        您好!\n        为了了解您理财的风险偏好和风险承受能力，及录入基本信息，以便我们针对您的个体特殊推荐相应的理财产品，现需要耽误您几分钟填写一下问卷测试。问卷完成后我们会有直接的测试结果，并据此推荐较为符合你的理财产品。"
+                    android:textColor="#000000"
+                    android:textSize="13dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>
