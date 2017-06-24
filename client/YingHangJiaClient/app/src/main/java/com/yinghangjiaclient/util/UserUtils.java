@@ -9,10 +9,9 @@ import android.widget.Toast;
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.login.LoginActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/**
- * Created by lin on 2017/6/24.
- */
 
 public class UserUtils {
 //    static public String getUserId(String name) {
