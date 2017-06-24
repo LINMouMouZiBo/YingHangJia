@@ -1,0 +1,46 @@
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical">
+    <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/returnback_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/button3"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="新手指引"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_height="fill_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <WebView
+            android:id="@+id/webview"
+            android:background="@null"
+            android:layerType="hardware"
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></WebView>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>
