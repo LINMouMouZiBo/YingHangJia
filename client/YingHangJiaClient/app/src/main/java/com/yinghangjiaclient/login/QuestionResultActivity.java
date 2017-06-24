@@ -39,6 +39,7 @@ public class QuestionResultActivity extends AppCompatActivity {
     private int scoreAge;
     private String userId;
     private JSONObject map;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class QuestionResultActivity extends AppCompatActivity {
             setContentView(R.layout.activity_register_eighth);
             sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
 
-            String name = sp.getString("USERNAME", "");
+            name = sp.getString("USERNAME", "");
             userId = sp.getString("USERID", "");
             String mapStr = sp.getString(name + "_info", "");
             if (StringUtils.isBlank(mapStr)) {
@@ -160,7 +161,7 @@ public class QuestionResultActivity extends AppCompatActivity {
             NameValuePair para7 = new BasicNameValuePair("gender",
                     map.getString("gender"));
             NameValuePair para8 = new BasicNameValuePair("name",
-                    map.getString("name"));
+                    name);
             List<NameValuePair> para = new ArrayList<NameValuePair>();
             para.add(para2);
             para.add(para3);
