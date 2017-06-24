@@ -20,7 +20,9 @@
         <activity android:name=".personal.PersonalMainActivity" />
         <activity android:name=".personal.PersonalCenterActivity" />
         <activity android:name=".personal.PersonalInfoActivity" />
-        <activity android:name=".personal.PasswordEditActivity"></activity>
+        <activity android:name=".personal.PasswordEditActivity" />
+        <activity android:name=".personal.ScoreActivity" />
+        <activity android:name=".personal.AdvisorActivity"></activity>
     </application>
 
 </manifest>
