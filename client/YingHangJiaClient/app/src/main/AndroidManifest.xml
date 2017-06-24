@@ -22,7 +22,10 @@
         <activity android:name=".personal.PersonalInfoActivity" />
         <activity android:name=".personal.PasswordEditActivity" />
         <activity android:name=".personal.ScoreActivity" />
-        <activity android:name=".personal.AdvisorActivity"></activity>
+        <activity android:name=".personal.AdvisorActivity" />
+        <activity android:name=".personal.NewsCollectActivity" />
+        <activity android:name=".personal.CollectActivity" />
+        <activity android:name=".personal.BoughtActivity"></activity>
     </application>
 
 </manifest>
