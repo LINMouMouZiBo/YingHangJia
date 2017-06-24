@@ -126,6 +126,7 @@ public class ProduceSearchActivity extends AppCompatActivity {
                 public void onRefresh() {
                     RecyclerViewStateUtils.setFooterViewState(mRecyclerView, LoadingFooter.State.Normal);
                     mDataAdapter.clear();
+//                    queryConditon = "";
                     lastItemId = "";
                     hasMoreData = true;
                     isRefresh = true;
@@ -172,6 +173,8 @@ public class ProduceSearchActivity extends AppCompatActivity {
                     intent.putExtra("_id", item.id);
                     intent.setClass(ProduceSearchActivity.this, ProduceMainActivity.class);
                     startActivity(intent);
+//                    Toast.makeText(UnLoginRecommendActivity.this, item.bank,
+//                            Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -371,6 +374,7 @@ public class ProduceSearchActivity extends AppCompatActivity {
             if (!StringUtils.isBlank(item.imgRes))
                 // 异步加载图片
                 mImageLoader.displayImage(StringUtils.bankLogoImageUrl(item.imgRes), viewHolder.banker_logo, options);
+            // Ion.with(viewHolder.banker_logo).load(item.imgRes);
         }
 
         private class ViewHolder extends RecyclerView.ViewHolder {

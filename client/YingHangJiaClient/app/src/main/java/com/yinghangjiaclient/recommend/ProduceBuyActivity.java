@@ -74,6 +74,10 @@ public class ProduceBuyActivity extends AppCompatActivity {
         }
     }
 
+    private void giveMsg() {
+        Toast.makeText(getApplicationContext(),
+                "购买系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
+    }
 
     private void openTencentMap() {
         try {
@@ -93,8 +97,7 @@ public class ProduceBuyActivity extends AppCompatActivity {
                     Uri.parse("androidamap://keywordNavi?sourceApplication=赢行家&keyword=" + bankName + "&style=2"));
             if (isInstallByread("com.autonavi.minimap")) {
                 intent.setPackage("com.autonavi.minimap");
-                //启动调用
-                startActivity(intent); 
+                startActivity(intent); //启动调用
             } else {
                 Toast.makeText(ProduceBuyActivity.this,
                         "没有安装高德地图客户端", Toast.LENGTH_SHORT).show();
@@ -107,10 +110,10 @@ public class ProduceBuyActivity extends AppCompatActivity {
 
     private void openBaiduMap() {
         try {
+//            Intent intent = Intent.getIntent("intent://map/marker?location=40.047669,116.313082&title=我的位置&content=百度奎科大厦&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end");
             Intent intent = Intent.getIntent("intent://map/geocoder?address=" + bankName + "&src=thirdapp.geo.yourCompanyName.yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end");
             if (isInstallByread("com.baidu.BaiduMap")) {
-                //启动调用
-                startActivity(intent);
+                startActivity(intent); //启动调用
             } else {
                 Toast.makeText(ProduceBuyActivity.this,
                         "没有安装百度地图客户端", Toast.LENGTH_SHORT).show();
@@ -123,11 +126,6 @@ public class ProduceBuyActivity extends AppCompatActivity {
 
     private boolean isInstallByread(String packageName) {
         return new File("/data/data/" + packageName).exists();
-    }
-
-    private void giveMsg() {
-        Toast.makeText(getApplicationContext(),
-                "购买系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
     }
 
 }

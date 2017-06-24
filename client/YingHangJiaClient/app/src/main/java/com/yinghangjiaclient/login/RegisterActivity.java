@@ -43,12 +43,12 @@ public class RegisterActivity extends Activity {
                     (EditText) findViewById(R.id.user_Password_confime);
 
             progressDialog = new ProgressDialog(RegisterActivity.this);
-            progressDialog.setTitle("ÌáÊ¾ĞÅÏ¢");
-            progressDialog.setMessage("ÕıÔÚ´¦Àí...");
+            progressDialog.setTitle("æç¤ºä¿¡æ¯");
+            progressDialog.setMessage("æ­£åœ¨å¤„ç†...");
             progressDialog.setCancelable(false);
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
-            //Îª×¢²á°´Å¥Ìí¼ÓÊÂ¼ş
+            //ä¸ºæ³¨å†ŒæŒ‰é’®æ·»åŠ äº‹ä»¶
             regBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -87,10 +87,10 @@ public class RegisterActivity extends Activity {
                 @Override
                 public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
                     if(isChecked){
-                        //Èç¹ûÑ¡ÖĞ£¬ÏÔÊ¾ÃÜÂë
+                        //å¦‚æœé€‰ä¸­ï¼Œæ˜¾ç¤ºå¯†ç 
                         pwdEditTest.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                     }else{
-                        //·ñÔòÒş²ØÃÜÂë
+                        //å¦åˆ™éšè—å¯†ç 
                         pwdEditTest.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     }
                 }
@@ -101,16 +101,16 @@ public class RegisterActivity extends Activity {
                 @Override
                 public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
                     if(isChecked){
-                        //Èç¹ûÑ¡ÖĞ£¬ÏÔÊ¾ÃÜÂë
+                        //å¦‚æœé€‰ä¸­ï¼Œæ˜¾ç¤ºå¯†ç 
                         pwdEditTest.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                     }else{
-                        //·ñÔòÒş²ØÃÜÂë
+                        //å¦åˆ™éšè—å¯†ç 
                         pwdEditTest.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     }
                 }
             });
 
-            //ÎªÈ¡Ïû°´Å¥Ìí¼ÓÊÂ¼ş
+            //ä¸ºå–æ¶ˆæŒ‰é’®æ·»åŠ äº‹ä»¶
             cancelBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -123,8 +123,8 @@ public class RegisterActivity extends Activity {
             Logger.e(e.getMessage());
         }
     } /**
-     * ¶¨ÒåÒ»¸öÀà£¬ÈÃÆä¼Ì³ĞAsyncTaskÕâ¸öÀà Params: StringÀàĞÍ£¬±íÊ¾´«µİ¸øÒì²½ÈÎÎñµÄ²ÎÊıÀàĞÍÊÇString£¬Í¨³£Ö¸¶¨µÄÊÇURLÂ·¾¶,ÕâÀïÓÃvoid
-     * Progress: IntegerÀàĞÍ£¬½ø¶ÈÌõµÄµ¥Î»Í¨³£¶¼ÊÇIntegerÀàĞÍ Result£ºboolean£¬ÊÇ·ñµÇÂ½³É¹¦
+     * å®šä¹‰ä¸€ä¸ªç±»ï¼Œè®©å…¶ç»§æ‰¿AsyncTaskè¿™ä¸ªç±» Params: Stringç±»å‹ï¼Œè¡¨ç¤ºä¼ é€’ç»™å¼‚æ­¥ä»»åŠ¡çš„å‚æ•°ç±»å‹æ˜¯Stringï¼Œé€šå¸¸æŒ‡å®šçš„æ˜¯URLè·¯å¾„,è¿™é‡Œç”¨void
+     * Progress: Integerç±»å‹ï¼Œè¿›åº¦æ¡çš„å•ä½é€šå¸¸éƒ½æ˜¯Integerç±»å‹ Resultï¼šbooleanï¼Œæ˜¯å¦ç™»é™†æˆåŠŸ
      */
     public class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
         @Override
@@ -147,48 +147,48 @@ public class RegisterActivity extends Activity {
             super.onPostExecute(result);
             progressDialog.dismiss();
             if (result) {
-                showDialog("×¢²á³É¹¦£¡");
-                // ³É¹¦ºó×Ô¶¯µÇÂ¼
+                showDialog("æ³¨å†ŒæˆåŠŸï¼");
+                // æˆåŠŸåè‡ªåŠ¨ç™»å½•
 //                SharedPreferences sp =
 //                        getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
 //                sp.edit().putBoolean("loginState", true);
-                //                Æô¶¯activity
+                //                å¯åŠ¨activity
                 Intent intent = new Intent(RegisterActivity.this,
                         LoginActivity.class);
                 startActivities(new Intent[]{intent});
                 RegisterActivity.this.finish();
             } else {
-                showDialog("ÓÃ»§ÃûÒÑ´æÔÚ£¬Çë¸ü»»");
+                showDialog("ç”¨æˆ·åå·²å­˜åœ¨ï¼Œè¯·æ›´æ¢");
             }
         }
     }
 
-    //¶ÔÓÃ»§ÃûÃÜÂë½øĞĞ·Ç¿ÕÑéÖ¤
+    //å¯¹ç”¨æˆ·åå¯†ç è¿›è¡Œéç©ºéªŒè¯
     private boolean validate() {
         String usrname = usrEditTest.getText().toString();
         if (usrname.equals("")) {
-            showDialog("ÓÃ»§Ãû±ØĞëÌî");
+            showDialog("ç”¨æˆ·åå¿…é¡»å¡«");
             return false;
         }
         String pwd = pwdEditTest.getText().toString();
         if (pwd.equals("")) {
-            showDialog("ÃÜÂë±ØĞëÌî");
+            showDialog("å¯†ç å¿…é¡»å¡«");
             return false;
         }
         String pwdAgain = pwdAgainEditTest.getText().toString();
         if (!pwd.equals(pwdAgain)) {
-            showDialog("ÃÜÂë²»Æ¥Åä");
+            showDialog("å¯†ç ä¸åŒ¹é…");
             return false;
         }
         return true;
     }
 
-    //ÏÔÊ¾ÌáÊ¾ĞÅÏ¢µÄ¶Ô»°¿ò
+    //æ˜¾ç¤ºæç¤ºä¿¡æ¯çš„å¯¹è¯æ¡†
     private void showDialog(String msg) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(msg)
                 .setCancelable(false)
-                .setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+                .setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
                 });
@@ -196,7 +196,7 @@ public class RegisterActivity extends Activity {
         alert.show();
     }
 
-    //Í¨¹ıÓÃ»§ÃûÓëÃÜÂë½øĞĞ²éÑ¯£¬·¢ËÍpostÇëÇó£¬µÃµ½ÏìÓ¦
+    //é€šè¿‡ç”¨æˆ·åä¸å¯†ç è¿›è¡ŒæŸ¥è¯¢ï¼Œå‘é€postè¯·æ±‚ï¼Œå¾—åˆ°å“åº”
     private String query(String username, String password) {
 
         String queryString = "username=" + username + "&password=" + password;
@@ -214,7 +214,7 @@ public class RegisterActivity extends Activity {
         return HttpUtil.queryStringForPost(url, para);
     }
 
-    //¶¨Òålogin ·½·¨
+    //å®šä¹‰login æ–¹æ³•
     private boolean login() {
         String usrname = usrEditTest.getText().toString();
         String pwd = pwdEditTest.getText().toString();
