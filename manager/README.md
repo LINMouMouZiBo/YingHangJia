@@ -14,3 +14,5 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+## the example
+> http://119.29.135.223:8000/
