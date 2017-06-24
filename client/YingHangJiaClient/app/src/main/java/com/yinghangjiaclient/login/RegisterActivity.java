@@ -196,7 +196,23 @@ public class RegisterActivity extends Activity {
         alert.show();
     }
 
+    //通过用户名与密码进行查询，发送post请求，得到响应
+    private String query(String username, String password) {
 
+        String queryString = "username=" + username + "&password=" + password;
+        String url = HttpUtil.BASE_URL + "LoginServlet?" + queryString;
+        //return HttpUtil.queryStringForGet(url);
+
+        url = HttpUtil.BASE_URL + "api/signup";
+        NameValuePair paraUsername = new BasicNameValuePair("name",
+                username);
+        NameValuePair paraPassword = new BasicNameValuePair("password",
+                password);
+        List<NameValuePair> para = new ArrayList<NameValuePair>();
+        para.add(paraPassword);
+        para.add(paraUsername);
+        return HttpUtil.queryStringForPost(url, para);
+    }
 
     //定义login 方法
     private boolean login() {
@@ -206,3 +222,4 @@ public class RegisterActivity extends Activity {
         return result != null && result.equals("OK");
     }
 }
+

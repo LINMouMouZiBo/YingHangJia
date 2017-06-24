@@ -30,9 +30,7 @@ public class MoreMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
-        
         try {
-            
             super.onCreate(savedInstanceState);
             setContentView(R.layout.more_first);
 
@@ -110,7 +108,6 @@ public class MoreMainActivity extends AppCompatActivity {
     }
 
     private void requestContactPermission() {
-        
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             //申请 WRITE_CONTACTS 权限
@@ -135,7 +132,6 @@ public class MoreMainActivity extends AppCompatActivity {
             }
         }
     }
-    
 
     private void share() {
         Intent intent = new Intent(Intent.ACTION_SEND);

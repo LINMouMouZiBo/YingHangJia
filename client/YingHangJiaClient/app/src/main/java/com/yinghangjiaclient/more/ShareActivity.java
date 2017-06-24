@@ -13,14 +13,11 @@ public class ShareActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
-        
         try {
-            
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_share);
 
             Button backBtn = (Button) findViewById(R.id.button3);
-            
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

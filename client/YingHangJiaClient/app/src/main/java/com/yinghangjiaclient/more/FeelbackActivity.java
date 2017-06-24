@@ -28,7 +28,6 @@ public class FeelbackActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
-        
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.feedback_center);
@@ -36,7 +35,6 @@ public class FeelbackActivity extends AppCompatActivity {
 
             // 登录按钮监听
             Button feedback_push_button = (Button) findViewById(R.id.feedback_push_button);
-            
             feedback_push_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
@@ -47,9 +45,7 @@ public class FeelbackActivity extends AppCompatActivity {
                 }
             });
 
-            
             Button backBtn = (Button) findViewById(R.id.button3);
-            
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,7 +76,6 @@ public class FeelbackActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            
             if (!StringUtils.isBlank(result) && result.equals("OK")) {
 
                 Toast toast = Toast.makeText(getApplicationContext(),
@@ -97,14 +92,12 @@ public class FeelbackActivity extends AppCompatActivity {
     }
 
     private String query() {
-        
         String url;
         url = HttpUtil.BASE_URL + "api/feedback";
         SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
         String username = sp.getString("USERNAME", "");
         NameValuePair paraType = new BasicNameValuePair("username",
                 username);
-        
         NameValuePair paraNewsId = new BasicNameValuePair("text", feelbackContext.getText().toString());
         List<NameValuePair> para = new ArrayList<NameValuePair>();
         para.add(paraType);

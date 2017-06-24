@@ -13,12 +13,10 @@ public class AboutUsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
-        
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.about_us);
 
-            
             Button backBtn = (Button) findViewById(R.id.return_button);
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override

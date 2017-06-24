@@ -10,16 +10,13 @@ import com.yinghangjiaclient.R;
 
 public class ConnectUsActivity extends AppCompatActivity {
 
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
-        
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.connect_us);
 
-            
             Button backBtn = (Button) findViewById(R.id.button3);
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
